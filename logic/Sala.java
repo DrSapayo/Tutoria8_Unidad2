@@ -1,6 +1,8 @@
+package logic;
+
+import model.Asiento;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class Sala {
 

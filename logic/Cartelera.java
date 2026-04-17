@@ -1,3 +1,7 @@
+package logic;
+
+import model.Mes;
+import model.Pelicula;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,7 +10,7 @@ public class Cartelera{
     // Atributos
     private Mes mes;
     private List<Pelicula> peliculas;
-   
+
 
     // Constructor
     public Cartelera(Mes mes, List<Pelicula> peliculas){

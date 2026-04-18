@@ -1,3 +1,5 @@
+package models;
+
 public class Cliente{
     // Atributos
 

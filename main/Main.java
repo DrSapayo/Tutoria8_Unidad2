@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import logic.Sala;
+import logic.Ticket;
+import models.Asiento;
+import models.Cliente;
+import models.Mes;
+import models.Pelicula;
+import logic.Cartelera;
+import exceptions.*;
+
 public class Main {
     public static void main(String[] args) {
         
-        Cliente c1 = new Cliente("Pancho", false);
+        /*Cliente c1 = new Cliente("Pancho", false);
         Cliente c2 = new Cliente("Ana", true);
         Cliente c3 = new Cliente("nodefinido", false);
 
@@ -15,6 +24,8 @@ public class Main {
         t1.asignarTicket(c1);
         t2.asignarTicket(c2);
         t3.asignarTicket(c3);
+
+        
 
         Pelicula p1 = new Pelicula("Rapidos y Furiosos", 1.00);
         Pelicula p2 = new Pelicula("Interestellar", 2.30);
@@ -29,13 +40,33 @@ public class Main {
 
         Cartelera a1 = new Cartelera(Mes.ABRIL, peliculas);
 
-        Sala vip = new Sala(5);
+        Sala vip = new Sala(4);
 
-        vip.agregarAsiento();
-        a1.mostrarCartelera();
-        System.out.println(t1.toString());
-        System.out.println(t2.toString());
-        System.out.println(t3.toString());
-        
+        t1.comprarTicket(c1, 2);*/
+
+        try{
+
+            Sala vip = new Sala(4);
+
+            vip.agregarAsiento();
+
+            Asiento deseado = vip.getAsiento(1);
+
+            Cliente c1 = new Cliente("Pancho", false);
+            Ticket t1 = new Ticket(1, 10000);
+
+            t1.comprarTicket(c1, vip.getAsiento(1));
+            System.out.println("Ticket comprado y asignado correctamente");
+
+            Cliente c2 = new Cliente("Ana",true);
+            Ticket t2 = new Ticket(2, 4000);
+
+            t2.comprarTicket(c2, deseado);
+            
+        } catch (AsientoError e){
+
+            System.err.println(e.getLocalizedMessage());
+
+        }
     }
 }

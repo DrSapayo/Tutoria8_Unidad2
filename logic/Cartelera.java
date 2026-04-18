@@ -1,9 +1,8 @@
 package logic;
 
-import model.Mes;
-import model.Pelicula;
-import java.util.ArrayList;
 import java.util.List;
+import models.Pelicula;
+import models.Mes;
 
 public class Cartelera{
 
